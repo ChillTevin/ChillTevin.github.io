@@ -13,6 +13,7 @@
       color: #333;
       text-align: center;
       padding: 20px;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -43,6 +44,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       max-width: 350px;
       transition: transform 0.3s ease;
+      position: relative;
     }
 
     figure:hover {
@@ -63,16 +65,28 @@
       padding: 12px 24px;
       border: none;
       border-radius: 8px;
-      background-color: #ff0055;
       color: white;
       font-size: 1.1em;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
+      position: relative;
     }
 
-    .vote-button:hover {
+    #btn-turro {
+      background-color: #ff0055;
+    }
+
+    #btn-turro:hover {
       background-color: #cc0044;
+    }
+
+    #btn-alto {
+      background-color: #007BFF;
+    }
+
+    #btn-alto:hover {
+      background-color: #0056b3;
     }
 
     .vote-counts {
@@ -121,14 +135,14 @@
       <figure>
         <img src="turro.jpg" alt="Turro" />
         <figcaption>
-          <button class="vote-button" type="button" onclick="votar('turro')">🔥 Votar Turro</button>
+          <button id="btn-turro" class="vote-button" type="button" onclick="votar('turro')">🔥 Votar Turro</button>
         </figcaption>
       </figure>
 
       <figure>
         <img src="alto_wachin.jpg" alt="Alto Wachin" />
         <figcaption>
-          <button class="vote-button" type="button" onclick="votar('alto_wachin')">💪 Votar Alto Wachin</button>
+          <button id="btn-alto" class="vote-button" type="button" onclick="votar('alto_wachin')">💪 Votar Alto Wachin</button>
         </figcaption>
       </figure>
     </section>
@@ -148,14 +162,21 @@
       turro: [
         "🔥 El turro que te mira y ya sabe que no le vas a ganar en una picada.",
         "🧢 Aparece con la gorra medio torcida y el mate en la mano como si nada.",
-        "🎉 Te invita a su cumple y termina siendo una joda épica con asado y freestyle."
+        "🎉 Te invita a su cumple y termina siendo una joda épica con asado y freestyle.",
+        "🚗 Llega en moto con parlantes y te saluda con un gesto que solo los turros entienden.",
+        "🎤 Te tira freestyle en la plaza y te deja sin palabras."
       ],
       alto_wachin: [
         "💪 Un wachin que parece que sale de entrenar todos los días... o de perseguirte por no saludar.",
         "🗣️ Te dice 'vení y hablamos' pero ya sabe que va a ser una charla de 3 horas con mate y memes.",
-        "🇦🇷 Aparece con la remera del Diego y te cuenta la jugada como si fuera ayer."
+        "🇦🇷 Aparece con la remera del Diego y te cuenta la jugada como si fuera ayer.",
+        "⚽ Te clava un caño en la canchita y te grita '¡eso es fútbol wachin!'",
+        "📱 Te manda memes a las 3 AM y te pregunta si estás despierto para charlar."
       ]
     };
+
+    const turroColors = ["#ff0055", "#ff9900", "#00cc66", "#6600cc", "#0099ff"];
+    let turroColorIndex = 0;
 
     function cargarVotos() {
       const votosTurro = parseInt(localStorage.getItem('votos-turro')) || 0;
@@ -180,6 +201,21 @@
         descripcion.textContent = random;
         descripcion.style.opacity = 1;
       }, 300);
+
+      if (opcion === 'turro') {
+        const btnTurro = document.getElementById('btn-turro');
+        turroColorIndex = (turroColorIndex + 1) % turroColors.length;
+        btnTurro.style.backgroundColor = turroColors[turroColorIndex];
+      }
+
+      if (opcion === 'alto_wachin') {
+        const btnAlto = document.getElementById('btn-alto');
+        const x = Math.floor(Math.random() * (window.innerWidth - 150));
+        const y = Math.floor(Math.random() * (window.innerHeight - 150));
+        btnAlto.style.position = 'absolute';
+        btnAlto.style.left = `${x}px`;
+        btnAlto.style.top = `${y}px`;
+      }
     }
 
     cargarVotos();
