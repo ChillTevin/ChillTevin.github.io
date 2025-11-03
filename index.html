@@ -2,28 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Imágenes y Descripciones</title>
+  <title>Votación Turro vs Alto Wachin</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       padding: 20px;
+      text-align: center;
     }
 
     .container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 40px;
       flex-wrap: wrap;
-      gap: 30px;
+      margin-bottom: 40px;
     }
 
     .image-box {
-      text-align: center;
       background-color: white;
-      padding: 15px;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 400px;
+      max-width: 350px;
     }
 
     .image-box img {
@@ -36,8 +37,8 @@
     }
 
     .button-group button {
+      padding: 10px 20px;
       margin: 5px;
-      padding: 8px 15px;
       border: none;
       border-radius: 5px;
       background-color: #007BFF;
@@ -49,57 +50,105 @@
       background-color: #0056b3;
     }
 
+    .voting-section {
+      margin-top: 40px;
+    }
+
+    .vote-option {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    .vote-count {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-left: 10px;
+    }
+
     .description {
-      margin-top: 15px;
+      margin-top: 40px;
       font-style: italic;
-      color: #333;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center;">Selecciona una opción</h1>
+  <h1>¿Qué te describe mejor?</h1>
 
   <div class="container">
 
     <!-- Imagen 1 -->
     <div class="image-box">
-      <img src="turro.jpg" alt="Imagen 1">
+      <img src="turro.jpg" alt="Turro">
       <div class="button-group">
-        <button onclick="mostrarDescripcion(1, 'turro')">Turro</button>
-        <button onclick="mostrarDescripcion(1, 'alto wachin')">Alto wachin</button>
+        <button onclick="votar('turro')">Turro</button>
       </div>
-      <div id="desc1" class="description"></div>
     </div>
 
     <!-- Imagen 2 -->
     <div class="image-box">
-      <img src="alto wachin.jpg" alt="Imagen 2">
+      <img src="alto wachin.jpg" alt="Alto wachin">
       <div class="button-group">
-        <button onclick="mostrarDescripcion(2, 'turro')">Turro</button>
-        <button onclick="mostrarDescripcion(2, 'alto wachin')">Alto wachin</button>
+        <button onclick="votar('alto wachin')">Alto wachin</button>
       </div>
-      <div id="desc2" class="description"></div>
     </div>
 
   </div>
 
+  <!-- Sección de votación -->
+  <div class="voting-section">
+    <div class="vote-option">
+      <button onclick="votar('turro')">Votar Turro</button>
+      <span class="vote-count" id="votos-turro">0</span>
+    </div>
+
+    <div class="vote-option">
+      <button onclick="votar('alto wachin')">Votar Alto wachin</button>
+      <span class="vote-count" id="votos-alto-wachin">0</span>
+    </div>
+  </div>
+
+  <!-- Descripción random -->
+  <div class="description" id="descripcion">
+    Hacé clic en una imagen o en "Votar" para ver una descripción random del contexto.
+  </div>
+
   <script>
     const descripciones = {
-      1: {
-        turro: "El turro que te mira y ya sabe que no le vas a ganar en una picada.",
-        "alto wachin": "Un wachin que parece que sale de entrenar todos los días... o de perseguirte por no saludar."
-      },
-      2: {
-        turro: "Turro nivel: te invita a su cumple y termina siendo una joda épica con asado y freestyle.",
-        "alto wachin": "Wachin que te dice 'vení y hablamos' pero ya sabe que va a ser una charla de 3 horas con mate y memes."
-      }
+      turro: [
+        "El turro que te mira y ya sabe que no le vas a ganar en una picada.",
+        "Aparece con la gorra medio torcida y el mate en la mano como si nada.",
+        "Te invita a su cumple y termina siendo una joda épica con asado y freestyle."
+      ],
+      "alto wachin": [
+        "Un wachin que parece que sale de entrenar todos los días... o de perseguirte por no saludar.",
+        "Te dice 'vení y hablamos' pero ya sabe que va a ser una charla de 3 horas con mate y memes.",
+        "Aparece con la remera del Diego y te cuenta la jugada como si fuera ayer."
+      ]
     };
 
-    function mostrarDescripcion(imagen, tipo) {
-      const desc = descripciones[imagen][tipo];
-      document.getElementById(`desc${imagen}`).textContent = desc;
+    function cargarVotos() {
+      const votosTurro = localStorage.getItem('votos-turro') || 0;
+      const votosAlto = localStorage.getItem('votos-alto-wachin') || 0;
+      document.getElementById('votos-turro').textContent = votosTurro;
+      document.getElementById('votos-alto-wachin').textContent = votosAlto;
     }
+
+    function votar(opcion) {
+      const clave = opcion === 'turro' ? 'votos-turro' : 'votos-alto-wachin';
+      let votos = parseInt(localStorage.getItem(clave) || 0);
+      votos++;
+      localStorage.setItem(clave, votos);
+      document.getElementById(clave === 'votos-turro' ? 'votos-turro' : 'votos-alto-wachin').textContent = votos;
+
+      const lista = descripciones[opcion];
+      const random = lista[Math.floor(Math.random() * lista.length)];
+      document.getElementById('descripcion').textContent = random;
+    }
+
+    // Cargar votos al iniciar
+    cargarVotos();
   </script>
 
 </body>
