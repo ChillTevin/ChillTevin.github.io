@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Votación Turro vs Alto Wachin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turro vs Alto Wachin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffefba, #ffffff);
+      color: #333;
       text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Bangers', cursive;
+      font-size: 3em;
+      color: #ff0055;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #00000020;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
     }
 
     .container {
@@ -19,137 +36,153 @@
       margin-bottom: 40px;
     }
 
-    .image-box {
-      background-color: white;
+    figure {
+      background-color: #fff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       max-width: 350px;
+      transition: transform 0.3s ease;
     }
 
-    .image-box img {
+    figure:hover {
+      transform: scale(1.05);
+    }
+
+    figure img {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      border: 4px dashed #ff0055;
     }
 
-    .button-group {
-      margin-top: 10px;
+    figcaption {
+      margin-top: 15px;
     }
 
-    .button-group button {
-      padding: 10px 20px;
-      margin: 5px;
+    .vote-button {
+      padding: 12px 24px;
       border: none;
-      border-radius: 5px;
-      background-color: #007BFF;
+      border-radius: 8px;
+      background-color: #ff0055;
       color: white;
+      font-size: 1.1em;
       cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
     }
 
-    .button-group button:hover {
-      background-color: #0056b3;
+    .vote-button:hover {
+      background-color: #cc0044;
     }
 
-    .voting-section {
-      margin-top: 40px;
-    }
-
-    .vote-option {
-      display: inline-block;
-      margin: 0 20px;
-    }
-
-    .vote-count {
+    .vote-counts {
+      margin-top: 30px;
+      font-size: 1.3em;
       font-weight: bold;
-      font-size: 1.2em;
-      margin-left: 10px;
+      color: #222;
     }
 
     .description {
       margin-top: 40px;
       font-style: italic;
-      color: #555;
+      color: #444;
+      font-size: 1.1em;
+      transition: opacity 0.3s ease;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .vote-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <main>
+    <h1>¿Sos más Turro o Alto Wachin?</h1>
 
-  <h1>¿Qué te describe mejor?</h1>
+    <section class="container">
+      <figure>
+        <img src="turro.jpg" alt="Turro" />
+        <figcaption>
+          <button class="vote-button" type="button" onclick="votar('turro')">🔥 Votar Turro</button>
+        </figcaption>
+      </figure>
 
-  <div class="container">
+      <figure>
+        <img src="alto_wachin.jpg" alt="Alto Wachin" />
+        <figcaption>
+          <button class="vote-button" type="button" onclick="votar('alto_wachin')">💪 Votar Alto Wachin</button>
+        </figcaption>
+      </figure>
+    </section>
 
-    <!-- Imagen 1 -->
-    <div class="image-box">
-      <img src="turro.jpg" alt="Turro">
-      <div class="button-group">
-        <button onclick="votar('turro')">Turro</button>
-      </div>
-    </div>
+    <section class="vote-counts">
+      Turro: <span id="votos-turro">0</span> |
+      Alto Wachin: <span id="votos-alto_wachin">0</span>
+    </section>
 
-    <!-- Imagen 2 -->
-    <div class="image-box">
-      <img src="alto wachin.jpg" alt="Alto wachin">
-      <div class="button-group">
-        <button onclick="votar('alto wachin')">Alto wachin</button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Sección de votación -->
-  <div class="voting-section">
-    <div class="vote-option">
-      <button onclick="votar('turro')">Votar Turro</button>
-      <span class="vote-count" id="votos-turro">0</span>
-    </div>
-
-    <div class="vote-option">
-      <button onclick="votar('alto wachin')">Votar Alto wachin</button>
-      <span class="vote-count" id="votos-alto-wachin">0</span>
-    </div>
-  </div>
-
-  <!-- Descripción random -->
-  <div class="description" id="descripcion">
-    Hacé clic en una imagen o en "Votar" para ver una descripción random del contexto.
-  </div>
+    <section class="description" id="descripcion">
+      Hacé clic en una imagen para ver una descripción random del contexto.
+    </section>
+  </main>
 
   <script>
     const descripciones = {
       turro: [
-        "El turro que te mira y ya sabe que no le vas a ganar en una picada.",
-        "Aparece con la gorra medio torcida y el mate en la mano como si nada.",
-        "Te invita a su cumple y termina siendo una joda épica con asado y freestyle."
+        "🔥 El turro que te mira y ya sabe que no le vas a ganar en una picada.",
+        "🧢 Aparece con la gorra medio torcida y el mate en la mano como si nada.",
+        "🎉 Te invita a su cumple y termina siendo una joda épica con asado y freestyle."
       ],
-      "alto wachin": [
-        "Un wachin que parece que sale de entrenar todos los días... o de perseguirte por no saludar.",
-        "Te dice 'vení y hablamos' pero ya sabe que va a ser una charla de 3 horas con mate y memes.",
-        "Aparece con la remera del Diego y te cuenta la jugada como si fuera ayer."
+      alto_wachin: [
+        "💪 Un wachin que parece que sale de entrenar todos los días... o de perseguirte por no saludar.",
+        "🗣️ Te dice 'vení y hablamos' pero ya sabe que va a ser una charla de 3 horas con mate y memes.",
+        "🇦🇷 Aparece con la remera del Diego y te cuenta la jugada como si fuera ayer."
       ]
     };
 
     function cargarVotos() {
-      const votosTurro = localStorage.getItem('votos-turro') || 0;
-      const votosAlto = localStorage.getItem('votos-alto-wachin') || 0;
+      const votosTurro = parseInt(localStorage.getItem('votos-turro')) || 0;
+      const votosAlto = parseInt(localStorage.getItem('votos-alto_wachin')) || 0;
       document.getElementById('votos-turro').textContent = votosTurro;
-      document.getElementById('votos-alto-wachin').textContent = votosAlto;
+      document.getElementById('votos-alto_wachin').textContent = votosAlto;
     }
 
     function votar(opcion) {
-      const clave = opcion === 'turro' ? 'votos-turro' : 'votos-alto-wachin';
-      let votos = parseInt(localStorage.getItem(clave) || 0);
+      const clave = opcion === 'turro' ? 'votos-turro' : 'votos-alto_wachin';
+      let votos = parseInt(localStorage.getItem(clave));
+      if (isNaN(votos)) votos = 0;
       votos++;
       localStorage.setItem(clave, votos);
-      document.getElementById(clave === 'votos-turro' ? 'votos-turro' : 'votos-alto-wachin').textContent = votos;
+      document.getElementById(clave).textContent = votos;
 
       const lista = descripciones[opcion];
       const random = lista[Math.floor(Math.random() * lista.length)];
-      document.getElementById('descripcion').textContent = random;
+      const descripcion = document.getElementById('descripcion');
+      descripcion.style.opacity = 0;
+      setTimeout(() => {
+        descripcion.textContent = random;
+        descripcion.style.opacity = 1;
+      }, 300);
     }
 
-    // Cargar votos al iniciar
     cargarVotos();
   </script>
-
 </body>
 </html>
