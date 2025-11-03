@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora Nativa (Patagonia/Andes)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FDF5E6; /* Tono "Old Lace" (Piel suave) */
+            color: #4A4A4A;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #8B4513; /* Marrón siena */
+            border-bottom: 2px solid #E6D8C0;
+            padding-bottom: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #FFFAF0; /* Floral White (Blanco roto) */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+        .plant-card {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #E6D8C0;
+            padding: 25px 10px;
+            margin-bottom: 20px;
+        }
+        .plant-card:last-child {
+            border-bottom: none;
+        }
+        .plant-image {
+            flex: 1;
+            min-width: 250px;
+            padding-right: 20px;
+        }
+        .plant-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .plant-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        .plant-info h2 {
+            color: #D2691E; /* Chocolate */
+            margin-top: 0;
+            border-bottom: 1px solid #F5E5C4;
+            padding-bottom: 5px;
+        }
+        .plant-info h3 {
+            color: #8B4513;
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+        .plant-info p {
+            margin-bottom: 10px;
+        }
+        .plant-info a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #D2691E;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .plant-info a:hover {
+            background-color: #A0522D; /* Siena */
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .plant-card {
+                flex-direction: column;
+            }
+            .plant-image {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flora Nativa (Patagonia/Andes)</h1>
+
+    <div class="container">
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Austrocedrus_chilensis_Nahuel_Huapi.jpg/800px-Austrocedrus_chilensis_Nahuel_Huapi.jpg" alt="Ciprés de la Cordillera" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Ciprés de la Cordillera <i>(Austrocedrus chilensis)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Una conífera de hoja perenne que puede alcanzar más de 20 metros. Su tronco es recto y su copa es piramidal. Sus hojas son pequeñas, escamosas y de color verde oscuro.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>Se le llama "Ciprés" por su parecido con los cipreses del hemisferio norte (género <i>Cupressus</i>). "De la Cordillera" indica su hábitat natural.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su madera es muy valorada por ser aromática, liviana y muy resistente a la pudrición. Se usa en construcción, postes, cercos y artesanías.</p>
+                <a href="https://es.wikipedia.org/wiki/Austrocedrus_chilensis" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Embothrium_coccineum_14.jpg/800px-Embothrium_coccineum_14.jpg" alt="Notro" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Notro o Ciruelillo <i>(Embothrium coccineum)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto o árbol pequeño de hoja perenne, famoso por sus espectaculares flores tubulares de color rojo intenso que aparecen en primavera.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>Su nombre "Notro" o "Notru" proviene directamente del mapudungun (lengua mapuche).</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Principalmente ornamental por su llamativa floración. La madera es rosada y se usa en artesanía. Atrae colibríes.</p>
+                <a href="https://es.wikipedia.org/wiki/Embothrium_coccineum" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Schinus_patagonicus_habito_general_Rinc%C3%B3n_01_BAB.jpg/800px-Schinus_patagonicus_habito_general_Rinc%C3%B3n_01_BAB.jpg" alt="Laura" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Laura <i>(Schinus patagonicus)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto denso y espinoso, a veces árbol pequeño, de hojas perennes, pequeñas y simples. Produce pequeñas bayas oscuras. Es pariente del pimiento y el molle.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>El origen del nombre "Laura" no es claro, pero es el nombre común con el que se le conoce en la región patagónica.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Se usa comúnmente para leña de buena calidad y para crear cercos vivos defensivos debido a sus espinas.</p>
+                <a href="https://es.wikipedia.org/wiki/Schinus_patagonicus" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Escallonia_rubra_-_La_Campana_NP_1.jpg/800px-Escallonia_rubra_-_La_Campana_NP_1.jpg" alt="Siete camisas" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Siete Camisas <i>(Escallonia rubra)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto de hoja perenne con hojas pequeñas, brillantes y algo pegajosas. Produce flores tubulares de color rosado o rojo. Su corteza es característica por desprenderse.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>Se llama "Siete camisas" por la forma en que su corteza (<i>ritidoma</i>) se desprende en capas delgadas, como si tuviera múltiples "camisas".</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Ampliamente utilizado como planta ornamental para jardines y cercos vivos. También es buena leña.</p>
+                <a href="https://es.wikipedia.org/wiki/Escallonia_rubra" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Luma_apiculata_-_Array%C3%A1n.jpg/800px-Luma_apiculata_-_Array%C3%A1n.jpg" alt="Arrayán" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Arrayán <i>(Luma apiculata)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol de hoja perenne, famoso por su corteza lisa, suave y de un llamativo color canela o anaranjado. Produce flores blancas y un fruto (baya) oscuro y comestible.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>El nombre "Arrayán" proviene del árabe <i>ar-rayḥān</i>, que significa "el mirto", debido a su similitud con el mirto mediterráneo.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Ornamental por su hermosa corteza. Sus frutos son comestibles (mermeladas) y sus hojas se usan como condimento (similares al laurel).</p>
+                <a href="https://es.wikipedia.org/wiki/Luma_apiculata" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Berberis_microphylla_in_fruit.jpg/800px-Berberis_microphylla_in_fruit.jpg" alt="Calafate" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Calafate <i>(Berberis microphylla)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto espinoso de hoja perenne. Tiene pequeñas hojas verde oscuro, flores amarillas y un fruto (baya) globoso de color azul oscuro o negro.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Calafate" es el nombre de origen tehuelche (Aonikenk) de la planta y su fruto.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su fruto es comestible y muy popular en la Patagonia para hacer mermeladas, jugos, licores y postres. Se usa como cerco vivo por sus espinas.</p>
+                <a href="https://es.wikipedia.org/wiki/Berberis_microphylla" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Buddleja_globosa_-_Pa%C3%B1il_or_Matico.jpg/800px-Buddleja_globosa_-_Pa%C3%B1il_or_Matico.jpg" alt="Pañil" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Pañil o Matico <i>(Buddleja globosa)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto de hojas grandes, opuestas y de textura rugosa. Es muy reconocible por sus flores agrupadas en esferas (glomérulos) de color naranjo intenso.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Pañil" o "Pangi" es su nombre en mapudungun. También se le llama "Matico", nombre compartido con otras plantas de propiedades similares.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Es una planta medicinal muy importante. Se usa principalmente de forma tópica como cicatrizante y antiinflamatorio para heridas y úlceras.</p>
+                <a href="https://es.wikipedia.org/wiki/Buddleja_globosa" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Fuchsia_magellanica_in_Chile.jpg/800px-Fuchsia_magellanica_in_Chile.jpg" alt="Chilco" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Chilco o Fucsia <i>(Fuchsia magellanica)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto nativo de donde provienen muchas fucsias de jardín. Tiene características flores colgantes, con sépalos rojos y pétalos morados.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Chilco" o "Chilko" es su nombre en mapudungun, que significa "agüita" o "acuoso", probablemente por crecer cerca del agua.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Principalmente ornamental. Sus bayas oscuras son comestibles (aunque no muy sabrosas) y sus flores atraen colibríes. Tiene usos en medicina popular.</p>
+                <a href="https://es.wikipedia.org/wiki/Fuchsia_magellanica" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Azara_microphylla_-_Garden_plants_in_K%C3%B6ln.jpg/800px-Azara_microphylla_-_Garden_plants_in_K%C3%B6ln.jpg" alt="Chinchin" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Chinchin <i>(Azara microphylla)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol o arbusto de follaje denso y elegante, con hojas muy pequeñas y brillantes. A fines de invierno produce flores amarillas diminutas muy fragantes (olor a vainilla).</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Chinchin" es el nombre onomatopéyico de origen mapuche, posiblemente por el sonido del viento en sus hojas o de insectos atraídos por sus flores.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Se usa como ornamental por su follaje fino y la fragancia de sus flores tempranas. También se usa como leña.</p>
+                <a href="https://es.wikipedia.org/wiki/Azara_microphylla" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Araucaria_araucana_im_Nebel.jpg/800px-Araucaria_araucana_im_Nebel.jpg" alt="Pewen" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Pewen o Araucaria <i>(Araucaria araucana)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Conífera muy antigua (un "fósil viviente"), de gran porte y aspecto único. Sus hojas son escamas triangulares, duras y muy puntiagudas. Crece lento y vive cientos de años.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Pewen" es su nombre en mapudungun. Es un árbol sagrado para los mapuches-pewenches ("gente del Pewen").</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su semilla, el "piñón", es un alimento fundamental y de gran valor nutricional y cultural. Es un monumento natural protegido.</p>
+                <a href="https://es.wikipedia.org/wiki/Araucaria_araucana" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Maytenus_boaria_Mait%C3%A9n.jpg/800px-Maytenus_boaria_Mait%C3%A9n.jpg" alt="Maitén" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Maitén <i>(Maytenus boaria)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol de hoja perenne, con una característica copa de ramas colgantes (aspecto de "sauce llorón"). Hojas pequeñas, simples y de borde aserrado.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Maitén" proviene del mapudungun <i>mayt'eñ</i>.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su principal uso es como forraje para el ganado (vacas, ovejas) en invierno, ya que sus hojas son de las pocas disponibles. También es ornamental.</p>
+                <a href="https://es.wikipedia.org/wiki/Maytenus_boaria" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Berberis_darwinii_-_blossom_detail.jpg/800px-Berberis_darwinii_-_blossom_detail.jpg" alt="Michay" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Michay <i>(Berberis darwinii)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto espinoso (pariente del Calafate) con hojas perennes, pequeñas, trilobuladas y espinosas. Destaca por sus racimos de flores de un intenso color naranjo-amarillo.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Michay" es su nombre de origen mapuche.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Muy usado como planta ornamental por su espectacular floración. Su fruto es una baya comestible (similar al calafate pero más ácida). Útil como cerco.</p>
+                <a href="https://es.wikipedia.org/wiki/Berberis_darwinii" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Aristotelia_chilensis_fruit.jpg/800px-Aristotelia_chilensis_fruit.jpg" alt="Maqui" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Maqui <i>(Aristotelia chilensis)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto o árbol pequeño, de crecimiento rápido (pionero). Tiene hojas opuestas, tallos rojizos y produce una gran cantidad de pequeñas bayas de color morado muy oscuro.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Maqui" o "Maki" es su nombre en mapudungun.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su fruto es muy valorado como "superalimento" por su altísimo poder antioxidante. Se consume fresco, en jugos o deshidratado. También se usa para teñir.</p>
+                <a href="https://es.wikipedia.org/wiki/Aristotelia_chilensis" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Lomatia_hirsuta_Radal_hojas.jpg/800px-Lomatia_hirsuta_Radal_hojas.jpg" alt="Radal" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Radal <i>(Lomatia hirsuta)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol o arbusto de hoja perenne, con hojas grandes, simples, de borde dentado y textura algo áspera. Produce flores en racimos de color blanco-crema.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Radal" es su nombre de origen mapuche.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su madera es muy apreciada en mueblería y artesanía por sus hermosas vetas ("jaspeada"). En medicina popular se usan sus hojas para la piel y afecciones respiratorias.</p>
+                <a href="https://es.wikipedia.org/wiki/Lomatia_hirsuta" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Desfontainia_spinosa_flower_detail.JPG/800px-Desfontainia_spinosa_flower_detail.JPG" alt="Taique" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Taique o Chapico <i>(Desfontainia spinosa)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto de hoja perenne con hojas muy duras y espinosas, muy parecidas a las del acebo. Produce llamativas flores tubulares, rojas con la punta amarilla.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Taique" o "Tayu" es su nombre de origen mapuche.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Se usa como planta ornamental por sus hojas y flores. En medicina popular se utiliza como colorante amarillo y para tratar dolencias estomacales.</p>
+                <a href="https://es.wikipedia.org/wiki/Desfontainia_spinosa" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Discaria_chacaye_Chacay_flower_detail_A.jpg/800px-Discaria_chacaye_Chacay_flower_detail_A.jpg" alt="Chacay" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Chacay <i>(Discaria chacaye)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Arbusto o árbol pequeño, muy espinoso, con ramas verdes que realizan la fotosíntesis. Puede perder sus hojas pequeñas. Flores pequeñas, blancas y fragantes.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Chacay" es su nombre de origen mapuche.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Debido a sus formidables espinas, se usa mucho para formar cercos vivos impenetrables. También es una excelente leña.</p>
+                <a href="https://es.wikipedia.org/wiki/Discaria_chacaye" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Nothofagus_obliqua_%28Conguill%C3%ADo_National_Park%2C_Chile%29_%2832810984950%29.jpg/800px-Nothofagus_obliqua_%28Conguill%C3%ADo_National_Park%2C_Chile%29_%2832810984950%29.jpg" alt="Roble Pellin" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Roble Pellin <i>(Nothofagus obliqua)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol caducifolio (pierde sus hojas) de gran tamaño, perteneciente al género <i>Nothofagus</i> (hayas del sur). Hojas simples con borde aserrado que se tornan amarillas y rojas en otoño.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Roble" fue el nombre dado por los españoles por la similitud de su madera dura con el roble europeo. "Pellin" es el nombre en mapudungun para el árbol adulto y su madera dura.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su madera es de excelente calidad, dura y resistente. Se usa en construcción pesada (vigas, puentes), durmientes de tren y mueblería fina.</p>
+                <a href="https://es.wikipedia.org/wiki/Nothofagus_obliqua" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Nothofagus_alpina_leaves.jpg/800px-Nothofagus_alpina_leaves.jpg" alt="Raulí" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Raulí <i>(Nothofagus alpina)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol caducifolio de gran porte, similar al Roble Pellin, pero sus hojas son más grandes, alargadas y de textura más suave. También ofrece un gran colorido otoñal.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Raulí" proviene del mapudungun <i>rawili</i>.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Junto al Roble, es una de las maderas nativas más valiosas. Tiene un hermoso tono rosado y se usa en ebanistería, muebles finos, puertas y revestimientos.</p>
+                <a href="https://es.wikipedia.org/wiki/Nothofagus_alpina" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Nothofagus_pumilio_autumn.jpg/800px-Nothofagus_pumilio_autumn.jpg" alt="Lenga" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Lenga <i>(Nothofagus pumilio)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol caducifolio que domina los bosques en zonas altas (límite arbóreo) y en el extremo sur. Hojas más pequeñas y redondeadas que el Roble o Raulí. Se tiñe de rojo intenso en otoño.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Lenga" es su nombre de origen Yagán o Selk'nam, adoptado por los colonos.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Su madera es muy utilizada en mueblería (se le llama "cerezo de Tierra del Fuego" por su color), carpintería y como leña de excelente calidad.</p>
+                <a href="https://es.wikipedia.org/wiki/Nothofagus_pumilio" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <div class="plant-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Nothofagus_antarctica_leaves_autumn.jpg/800px-Nothofagus_antarctica_leaves_autumn.jpg" alt="Ñire" referrerpolicy="no-referrer">
+            </div>
+            <div class="plant-info">
+                <h2>Ñire <i>(Nothofagus antarctica)</i></h2>
+                <h3>Descripci&oacute;n</h3>
+                <p>Árbol caducifolio, el más rústico de los <i>Nothofagus</i>. Puede crecer como árbol grande o achaparrado (arbusto) en zonas difíciles (frío, viento, mallines). Hojas pequeñas, arrugadas y de borde irregular.</p>
+                <h3>📘 Significado / Origen del nombre</h3>
+                <p>"Ñire" o "Ñirre" es su nombre de origen mapuche.</p>
+                <h3>Uso o utilidad principal</h3>
+                <p>Debido a su abundancia y resistencia, es la principal fuente de leña en muchas zonas de la Patagonia. También se usa para postes de cerco.</p>
+                <a href="https://es.wikipedia.org/wiki/Nothofagus_antarctica" target="_blank">M&aacute;s informaci&oacute;n</a>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
