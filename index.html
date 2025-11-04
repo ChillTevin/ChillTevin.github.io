@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Turro vs Alto Wachin</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #ffefba, #ffffff);
       color: #333;
       text-align: center;
@@ -97,7 +97,7 @@
     }
 
     .description {
-      margin-top: 40px;
+      margin-top: 20px;
       font-style: italic;
       color: #444;
       font-size: 1.1em;
@@ -128,21 +128,26 @@
   </style>
 </head>
 <body>
+
   <main>
     <h1>¿Sos más Turro o Alto Wachin?</h1>
 
     <section class="container">
+      <!-- Imagen 1 -->
       <figure>
         <img src="turro.jpg" alt="Turro" />
         <figcaption>
           <button id="btn-turro" class="vote-button" type="button" onclick="votar('turro')">🔥 Votar Turro</button>
+          <div class="description" id="desc-turro" style="margin-top: 15px; opacity: 0;"></div>
         </figcaption>
       </figure>
 
+      <!-- Imagen 2 -->
       <figure>
         <img src="alto_wachin.jpg" alt="Alto Wachin" />
         <figcaption>
           <button id="btn-alto" class="vote-button" type="button" onclick="votar('alto_wachin')">💪 Votar Alto Wachin</button>
+          <div class="description" id="desc-alto_wachin" style="margin-top: 15px; opacity: 0;"></div>
         </figcaption>
       </figure>
     </section>
@@ -150,10 +155,6 @@
     <section class="vote-counts">
       Turro: <span id="votos-turro">0</span> |
       Alto Wachin: <span id="votos-alto_wachin">0</span>
-    </section>
-
-    <section class="description" id="descripcion">
-      Hacé clic en una imagen para ver una descripción random del contexto.
     </section>
   </main>
 
@@ -195,11 +196,11 @@
 
       const lista = descripciones[opcion];
       const random = lista[Math.floor(Math.random() * lista.length)];
-      const descripcion = document.getElementById('descripcion');
-      descripcion.style.opacity = 0;
+      const desc = document.getElementById(`desc-${opcion}`);
+      desc.style.opacity = 0;
       setTimeout(() => {
-        descripcion.textContent = random;
-        descripcion.style.opacity = 1;
+        desc.textContent = random;
+        desc.style.opacity = 1;
       }, 300);
 
       if (opcion === 'turro') {
@@ -220,5 +221,6 @@
 
     cargarVotos();
   </script>
+
 </body>
 </html>
